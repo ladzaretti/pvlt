@@ -123,7 +123,7 @@ func (o *SaveOptions) Run(ctx context.Context) (retErr error) {
 	secret = s
 
 	if len(o.name) == 0 {
-		k, err := o.readInteractive("Enter key: ")
+		k, err := o.readInteractive("Enter name: ")
 		if err != nil {
 			return fmt.Errorf("name read interactive: %w", err)
 		}

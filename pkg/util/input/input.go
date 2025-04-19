@@ -34,7 +34,6 @@ func ReadTrim(r io.Reader) (string, error) {
 // PromptRead prompts via w for input and reads it from r until a newline is entered.
 func PromptRead(w io.Writer, r io.Reader, prompt string, a ...any) (string, error) {
 	fmt.Fprintf(w, prompt, a...)
-	defer fmt.Println()
 
 	reader := bufio.NewReader(r)
 

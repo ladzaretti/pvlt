@@ -71,7 +71,7 @@ func (o *CreateOptions) Run(ctx context.Context) error {
 		return fmt.Errorf("set master key: %w", err)
 	}
 
-	o.Infof("New vault successfully created at %q", o.vaultPath())
+	o.Infof("New vault successfully created at %q\n", o.vaultPath())
 
 	return nil
 }
