@@ -64,7 +64,7 @@ func (o *CreateOptions) Run(ctx context.Context, _ ...string) error {
 		return fmt.Errorf("create vault: %w", err)
 	}
 
-	o.Infof("New vault successfully created at %q\n", o.vaultOptions.path)
+	o.Infof("new vault successfully created at %q\n", o.vaultOptions.path)
 
 	return nil
 }

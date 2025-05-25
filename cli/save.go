@@ -123,12 +123,12 @@ func (o *SaveOptions) readSecretNonInteractive() (string, error) {
 	}
 
 	if o.paste {
-		o.Debugf("Reading secret from clipboard")
+		o.Debugf("reading secret from clipboard")
 		return clipboard.Paste()
 	}
 
 	if o.NonInteractive {
-		o.Debugf("Reading non-interactive secret")
+		o.Debugf("reading non-interactive secret")
 		return input.ReadTrim(o.In)
 	}
 
@@ -194,7 +194,7 @@ func (o *SaveOptions) outputSecret(s string) error {
 	}
 
 	if o.copy {
-		o.Debugf("Copying secret to clipboard\n")
+		o.Debugf("copying secret to clipboard\n")
 		return clipboard.Copy(s)
 	}
 

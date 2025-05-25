@@ -101,7 +101,7 @@ func (o *UpdateOptions) Run(ctx context.Context, args ...string) (retErr error) 
 
 	switch count {
 	case 1:
-		o.Infof("Found one match.\n")
+		o.Infof("found one match.\n")
 	case 0:
 		o.Warnf("No match found.\n")
 		return vaulterrors.ErrSearchNoMatch
@@ -225,7 +225,7 @@ func (o *UpdateSecretValueOptions) Run(ctx context.Context, args ...string) (ret
 
 	switch count {
 	case 1:
-		o.Debugf("Found one match.\n")
+		o.Debugf("found one match.\n")
 	case 0:
 		o.Warnf("No match found.\n")
 		return &UpdateError{vaulterrors.ErrSearchNoMatch}
@@ -291,12 +291,12 @@ func (o *UpdateSecretValueOptions) readSecretNonInteractive() (string, error) {
 	}
 
 	if o.paste {
-		o.Debugf("Reading secret from clipboard")
+		o.Debugf("reading secret from clipboard")
 		return clipboard.Paste()
 	}
 
 	if o.NonInteractive {
-		o.Debugf("Reading non-interactive secret")
+		o.Debugf("reading non-interactive secret")
 		return input.ReadTrim(o.In)
 	}
 
@@ -310,7 +310,7 @@ func (o *UpdateSecretValueOptions) outputSecret(s string) error {
 	}
 
 	if o.copy {
-		o.Debugf("Copying secret to clipboard\n")
+		o.Debugf("copying secret to clipboard\n")
 		return clipboard.Copy(s)
 	}
 

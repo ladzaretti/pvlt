@@ -75,7 +75,7 @@ func (o *RemoveOptions) Run(ctx context.Context, args ...string) (retErr error) 
 
 	switch count {
 	case 1:
-		o.Debugf("Found one match.\n")
+		o.Debugf("found one match.\n")
 	case 0:
 		o.Warnf("No match found.\n")
 		return vaulterrors.ErrSearchNoMatch
@@ -97,17 +97,17 @@ func (o *RemoveOptions) Run(ctx context.Context, args ...string) (retErr error) 
 			return nil
 		}
 
-		o.Debugf("Deletion confirmed by the user.\n")
+		o.Debugf("deletion confirmed by the user.\n")
 	}
 
-	o.Debugf("Proceeding with deleting secrets.\n")
+	o.Debugf("proceeding with deleting secrets.\n")
 
 	n, err := o.vault.DeleteSecretsByIDs(ctx, extractIDs(matchingSecrets)...)
 	if err != nil {
 		return err
 	}
 
-	o.Debugf("Successfully deleted %d secrets.\n", n)
+	o.Debugf("successfully deleted %d secrets.\n", n)
 	o.Infof("OK\n")
 
 	if err := genericclioptions.RunHook(ctx, o.StdioOptions, o.hooks.postWrite); err != nil {

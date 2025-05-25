@@ -252,7 +252,7 @@ func (o *ImportOptions) Run(ctx context.Context, _ ...string) (retErr error) {
 		i++
 	}
 
-	o.Infof("Successfully imported %d records.\n", i)
+	o.Infof("successfully imported %d records.\n", i)
 
 	if err := genericclioptions.RunHook(ctx, o.StdioOptions, o.hooks.postWrite); err != nil {
 		o.Warnf("Post-write hook failed: %v", err)
@@ -265,11 +265,11 @@ func (o *ImportOptions) Run(ctx context.Context, _ ...string) (retErr error) {
 func (o *ImportOptions) importerForHeader(header string) Importer {
 	switch header {
 	case firefoxHeader:
-		o.Infof("Firefox export file detected.\n")
+		o.Infof("firefox export file detected.\n")
 		return firefoxImporter
 
 	case chromiumHeader:
-		o.Infof("Chromium export file detected.\n")
+		o.Infof("chromium export file detected.\n")
 		return chromiumImporter
 
 	case vltExportHeader:
@@ -277,7 +277,7 @@ func (o *ImportOptions) importerForHeader(header string) Importer {
 		return vltImporter
 
 	default:
-		o.Debugf("Using custom import config: %s\n", o.importConfig)
+		o.Debugf("using custom import config: %s\n", o.importConfig)
 		return o.importConfig
 	}
 }

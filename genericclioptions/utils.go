@@ -60,5 +60,7 @@ func RunHook(ctx context.Context, io *StdioOptions, hook []string) error {
 
 	cmd, args := hook[0], hook[1:]
 
+	io.Infof("running hook: %q %q\n", cmd, args)
+
 	return RunCommand(ctx, io, cmd, args...)
 }

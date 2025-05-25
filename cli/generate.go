@@ -46,7 +46,7 @@ func (o *GenerateOptions) Run(context.Context, ...string) error {
 	}
 
 	if o.copy {
-		o.Debugf("Copying secret to clipboard\n")
+		o.Debugf("copying secret to clipboard\n")
 		return clipboard.Copy(s)
 	}
 

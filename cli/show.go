@@ -88,7 +88,7 @@ func (o *ShowOptions) Run(ctx context.Context, args ...string) error {
 
 	switch count {
 	case 1:
-		o.Debugf("Found one match.\n")
+		o.Debugf("found one match.\n")
 
 		s, err := o.vault.ShowSecret(ctx, matchingSecrets[0].id)
 		if err != nil {
@@ -114,7 +114,7 @@ func (o *ShowOptions) outputSecret(s string) error {
 	}
 
 	if o.copy {
-		o.Debugf("Copying secret to clipboard\n")
+		o.Debugf("copying secret to clipboard\n")
 		return clipboard.Copy(s)
 	}
 

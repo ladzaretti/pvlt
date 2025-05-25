@@ -134,12 +134,12 @@ If --file is not provided, the default config path (~/%s) is used.`, defaultConf
 			clierror.Check(genericclioptions.ExecuteCommand(cmd.Context(), o))
 
 			if len(o.fileConfig.path) == 0 {
-				o.Infof("No config file found; using default values.\n")
+				o.Infof("no config file found; using default values.\n")
 				return
 			}
 
-			o.Infof("Config loaded from: %q:\n\n%s\n\n", o.fileConfig.path, stringifyPretty(o.fileConfig))
-			o.Infof("Resolved runtime config:\n\n%+v\n", stringifyPretty(o.resolved))
+			o.Infof("config loaded from: %q:\n\n%s\n\n", o.fileConfig.path, stringifyPretty(o.fileConfig))
+			o.Infof("resolved runtime config:\n\n%+v\n", stringifyPretty(o.resolved))
 		},
 	}
 
@@ -237,7 +237,7 @@ func (o *validateConfigOptions) Run(context.Context, ...string) error {
 	clierror.Check(err)
 
 	if len(c.path) == 0 {
-		o.Infof("No config file found; Nothing to validate.\n")
+		o.Infof("no config file found; Nothing to validate.\n")
 		return nil
 	}
 

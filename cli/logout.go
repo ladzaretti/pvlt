@@ -47,7 +47,7 @@ func (o *LogoutOptions) Run(ctx context.Context, _ ...string) error {
 		return err
 	}
 
-	o.Infof("Logout successful")
+	o.Infof("logout successful")
 
 	return nil
 }
